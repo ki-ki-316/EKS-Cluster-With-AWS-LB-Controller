@@ -82,6 +82,7 @@ ingress-2048   alb     *       k8s-game2048-ingress2-a91471f868-1855553634.ap-so
 in browser open url: k8s-game2048-ingress2-a91471f868-1855553634.ap-southeast-2.elb.amazonaws.com
 
 success!
+
 <img width="670" alt="image" src="https://user-images.githubusercontent.com/4045611/175227724-6c6797ce-10c6-4520-9cee-7cfa849e9cfc.png">
 
 
@@ -90,7 +91,7 @@ success!
 eksctl delete cluster --name eks-demo-cluster --region ap-southeast-2
 ```
 
-### Remove other resources 
+### Clean other resources 
 go to your aws dashboard
 
 remove these in order
