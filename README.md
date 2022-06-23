@@ -41,11 +41,32 @@ eksctl utils associate-iam-oidc-provider --region ap-southeast-2 --cluster eks-d
 ```
 aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
 ```
+you'll get the result like this:
+{
+    "Policy": {
+        "PolicyName": "AWSLoadBalancerControllerIAMPolicy",
+        "PolicyId": "ANPAWTSYI5EPMJ5DXBTMO",
+        "Arn": "arn:aws:iam::12345678:policy/AWSLoadBalancerControllerIAMPolicy",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2022-06-22T10:01:22Z",
+        "UpdateDate": "2022-06-22T10:01:22Z"
+    }
+}
+
+Arn will use in next step
+"Arn": "arn:aws:iam::12345678:policy/AWSLoadBalancerControllerIAMPolicy",
 
 ## Create a IAM role and ServiceAccount
+in --attach-policy-arn=, replace the arn you get in previous step
+
 ```
-eksctl create iamserviceaccount --cluster=eks-demo-cluster --namespace=kube-system --name=aws-load-balancer-controller --role-name "AmazonEKSLoadBalancerControllerRole" --attach-policy-arn=arn:aws:iam::454377924894:policy/AWSLoadBalancerControllerIAMPolicy --approve
+eksctl create iamserviceaccount --cluster=eks-demo-cluster --namespace=kube-system --name=aws-load-balancer-controller --role-name "AmazonEKSLoadBalancerControllerRole" --attach-policy-arn=arn:aws:iam::12345678:policy/AWSLoadBalancerControllerIAMPolicy --approve
 ```
+
 
 ## Deploy the Helm chart
 ```
