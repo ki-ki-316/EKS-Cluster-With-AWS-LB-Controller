@@ -42,6 +42,7 @@ eksctl utils associate-iam-oidc-provider --region ap-southeast-2 --cluster eks-d
 aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
 ```
 you'll get the result like this:
+```
 {
     "Policy": {
         "PolicyName": "AWSLoadBalancerControllerIAMPolicy",
@@ -56,7 +57,7 @@ you'll get the result like this:
         "UpdateDate": "2022-06-22T10:01:22Z"
     }
 }
-
+```
 Arn will use in next step
 "Arn": "arn:aws:iam::12345678:policy/AWSLoadBalancerControllerIAMPolicy",
 
