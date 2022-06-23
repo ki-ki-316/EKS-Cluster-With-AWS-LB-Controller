@@ -1,5 +1,8 @@
-# EKS-Cluster
-How to build EKS cluster on AWS, in this example, I all use ap-southeast-2 (Sydney
+# EKS-Cluster-With-AWS-LB-Controller
+How to build EKS cluster with ingress controller on AWS , in this example, I all use ap-southeast-2 (Sydney
+
+AWS Load Balancer Controller refers to the latest one (2.4.2)
+https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
 
 ## set AWS crendential in your computer
 ```
@@ -74,7 +77,7 @@ eksctl create iamserviceaccount --cluster=eks-demo-cluster --namespace=kube-syst
 helm repo add eks https://aws.github.io/eks-charts
 ```
 
-## Configure AWS ALB (Apllication Load Balancer) to sit infront of Ingress
+## Configure AWS LB controller(Load Balancer controller, old name is AWS ALB ingress controller) to sit infront of Ingress
 ```
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=eks-demo-cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller 
 ```
