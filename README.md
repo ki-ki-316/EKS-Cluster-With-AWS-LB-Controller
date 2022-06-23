@@ -2,7 +2,7 @@
 In this tutorial, I'll show you how to build EKS cluster with ingress controller on AWS easily.
 
 * AWS region all use ap-southeast-2 (Sydney)
-* AWS Load Balancer Controller refers to the latest one (2.4.2), refer to this: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
+* AWS Load Balancer Controller refers to the latest one (2.4.2): https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
 
 ## set AWS crendential in your computer
 ```
