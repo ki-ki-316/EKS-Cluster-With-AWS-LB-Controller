@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/4045611/175252426-48d2cd50-b1da-4924-9221-2474a928e8a3.png)
+
+
 # EKS-Cluster-With-AWS-LB-Controller
 In this tutorial, I'll show you how to build EKS cluster with ingress controller on AWS easily.
 
